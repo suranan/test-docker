@@ -1,4 +1,7 @@
-body {
+<!doctype html>
+<html>
+<style>
+    body {
         font-family: 'Open Sans', sans-serif;
         background-color: #f7f7f7;
         position: relative;
@@ -674,3 +677,21 @@ body {
             border-radius: 10px;
         }
     }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrainingTest</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <app-root>Loading...</app-root>
+
+</body>
+
+</html>
