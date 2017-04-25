@@ -3,6 +3,6 @@ module.exports = function(router) {
     router.route('/user').get(user.list).post(user.create);
     router.route('/user/update').post(user.update);
     router.route('/user/delete').post(user.delete);
-    router.route('/user/:usercode').get(user.list);
-    router.param('usercode', user.read);
+    router.route('/user/:usercode').get(user.read);
+    router.param('usercode', user.getUser);
 }

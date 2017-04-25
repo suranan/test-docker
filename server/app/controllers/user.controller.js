@@ -60,13 +60,23 @@ exports.delete = function(req, res, next) {
 
 };
 
-exports.read = function(req, res, next, usercode) {
+exports.read = function(req, res, next) {
+
     let ObjectId = require('mongoose').Types.ObjectId;
-    User.findOne({ '_id': new ObjectId(usercode) }, '__id firstname lastname email sex birthday', (err, docs) => {
+    User.findOne({ '_id': new ObjectId(req.usercode) }, '__id firstname lastname email sex birthday', (err, docs) => {
         if (err) {
-            console.log('error!!');
+            console.log(err);
         } else {
             res.json(docs);
         }
     });
+
+
+};
+
+exports.getUser = function(req, res, next, usercode) {
+
+    req.usercode = usercode;
+    next();
+
 };

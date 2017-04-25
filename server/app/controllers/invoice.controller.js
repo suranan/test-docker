@@ -1,5 +1,4 @@
 var Invoice = require('mongoose').model('Invoice');
-var User = require('mongoose').model('User');
 
 exports.list = function(req, res, next) {
     Invoice.aggregate([{
@@ -50,10 +49,11 @@ exports.create = function(req, res, next) {
 
 
 exports.read = function(req, res, next) {
+
     let ObjectId = require('mongoose').Types.ObjectId;
     Invoice.aggregate([{
             $match: {
-                _id: ObjectId(req.body.id)
+                _id: ObjectId(req.invoice)
             }
         }, {
             $lookup: {
@@ -69,9 +69,18 @@ exports.read = function(req, res, next) {
 
     ]).exec((err, docs) => {
         if (err) {
-            console.log(err);
+            return next(err);
         } else {
             res.json(docs[0]);
         }
     });
+
+};
+
+
+exports.getInvoice = function(req, res, next, invoicecode) {
+
+    req.invoice = invoicecode;
+    next();
+
 };
