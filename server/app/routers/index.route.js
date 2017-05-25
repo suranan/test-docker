@@ -8,6 +8,5 @@ router.get('/', (req, res) => {
 
 require('./user.route')(router);
 require('./invoice.route')(router);
-require('./mail.route')(router);
 
 module.exports = router;
