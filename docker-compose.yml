@@ -12,3 +12,5 @@ services:
     image: mongo # specify image to build container from
     ports:
       - "27017:27017" # specify port forewarding
+    volumes:
+    - ./mongo_data:/data/db
