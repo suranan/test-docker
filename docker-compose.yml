@@ -4,7 +4,7 @@ version: '2' # specify docker-compose version
 services:
 
   express: #name of the second service
-    build: docker-mean # specify the directory of the Dockerfile
+    build: . # specify the directory of the Dockerfile
     ports:
       - "3000:3000" #specify ports forewarding
 
