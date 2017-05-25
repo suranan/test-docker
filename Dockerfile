@@ -8,7 +8,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy dependency definitions
-COPY package.json /usr/src/app
+COPY ./server/package.json /usr/src/app
 
 # Install dependecies
 RUN npm install
