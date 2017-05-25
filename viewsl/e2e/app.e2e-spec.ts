@@ -1,6 +1,6 @@
 import { ViewsPage } from './app.po';
 
-describe('views App', () => {
+describe('views App', function() {
   let page: ViewsPage;
 
   beforeEach(() => {
