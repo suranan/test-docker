@@ -43,7 +43,6 @@ exports.update = function(req, res, next) {
             res.json({ 'status': false, 'massage': 'ผิดพลาด', 'respond': err });
         }
     });
-
 };
 
 exports.delete = function(req, res, next) {
@@ -57,26 +56,15 @@ exports.delete = function(req, res, next) {
             res.json({ 'status': false, 'massage': 'ผิดพลาด', 'respond': err });
         }
     });
-
 };
 
-exports.read = function(req, res, next) {
-
+exports.read = function(req, res, next, usercode) {
     let ObjectId = require('mongoose').Types.ObjectId;
-    User.findOne({ '_id': new ObjectId(req.usercode) }, '__id firstname lastname email sex birthday', (err, docs) => {
+    User.findOne({ '_id': new ObjectId(usercode) }, '__id firstname lastname email sex birthday', (err, docs) => {
         if (err) {
-            console.log(err);
+            console.log('error!!');
         } else {
             res.json(docs);
         }
     });
-
-
-};
-
-exports.getUser = function(req, res, next, usercode) {
-
-    req.usercode = usercode;
-    next();
-
 };

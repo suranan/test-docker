@@ -21,10 +21,10 @@ module.exports = function() {
 
     app.use('/api', require('../app/routers/index.route'));
 
-    app.use(express.static(path.join(__dirname, './../../views')));
+    app.use(express.static(path.join(__dirname, './../../views/dist')));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, './../../views/index.html'));
+        res.sendFile(path.join(__dirname, './../../views/dist/index.html'));
     });
 
     return app;
