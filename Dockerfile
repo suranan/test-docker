@@ -16,6 +16,9 @@ RUN npm install
 # Get all the code needed to run the app
 COPY . /usr/src/app
 
+# Get all the code needed to run the app
+COPY ./views/dist/* /usr/src/app/views/dist/
+
 # Expose the port the app runs in
 EXPOSE 3000
 
