@@ -11,9 +11,10 @@ services:
   database: # name of the third service
     image: mongo # specify image to build container from
     ports:
-      - "27017:27017" # specify port forewarding
+      - "27017:27017" # specify port forewarding     
     volumes:
-      - data:/usr/src/app/mongo
+     - data:/usr/src/app/mongo
+
   volumes:
     data:
-      driver:"Local"
+      driver: "local"
