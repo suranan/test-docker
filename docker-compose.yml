@@ -13,4 +13,7 @@ services:
     ports:
       - "27017:27017" # specify port forewarding
     volumes:
-      - ./data/db
+      - data:/usr/src/app/mongo
+  volumes:
+    data:
+      driver:"Local"
