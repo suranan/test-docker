@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017" # specify port forewarding     
     volumes:
-     - .:/code
+     - test:/code
 
   express: #name of the second service
     build: . # specify the directory of the Dockerfile
