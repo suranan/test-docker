@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017" # specify port forewarding     
     volumes:
-     - /home/bell:/data/db
+     - /home/bell/mongo/data/db:/data/db
 
   express: #name of the second service
     build: . # specify the directory of the Dockerfile
