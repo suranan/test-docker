@@ -1,4 +1,4 @@
 module.exports = {
     debug: true,
-    mongoURL: 'mongodb://database/mean-app'
+    mongoURL: 'mongodb://localhost/mean-app'
 }
